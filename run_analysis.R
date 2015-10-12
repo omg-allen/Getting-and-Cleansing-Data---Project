@@ -40,21 +40,21 @@ downloadFile <- "data/getdata_dataset.zip"
 ## download and unzip the filename
 downloadURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 
+## set variables for URL, file and download locations
 trainXFile <- "./data/UCI HAR Dataset/train/X_train.txt"
 trainLabels <- "./data/UCI HAR Dataset/train/y_train.txt"
 trainSubjectFile <- ".data/UCI HAR Dataset/train/subject_train.txt"
 testXFile <- "./data/UCI HAR Dataset/test/X_test.txt"
 testLabels <- "./data/UCI HAR Dataset/test/y_test.txt"
 testSubjectFile <- ".data/UCI HAR Dataset/test/subject_test.txt"
-##
+
+## test for data foloder and zip file, if NOT found create
 if(!file.exists("./data")) { dir.create("./data")}
 if (!file.exists(downloadFile)) {
   download.file(downloadURL, downloadFile, method = "curl");
   unzip(downloadFile, overwrite = T, exdir = ".")
 }
-##
 
-## Read in Labels
 ## Load activity labels - Uses descriptive activity names to name the activities in the data set
 activityLabels <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
 activityLabels[,2] <- as.character(activityLabels[,2])
