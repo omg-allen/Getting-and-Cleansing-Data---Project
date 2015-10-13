@@ -38,6 +38,25 @@ The following files are available for the train and test data. Their description
 
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
+Process Flow for Run_Analysis.R:
+=========================================
+The following describes the process flow for the R program (run_analysis.R)
+0.  Create Github local repository (project), remember to do save & snyc files as you go.
+1.  Set workding directory to project
+2.  Make sure the library "reshape2" is loaded
+3.  Set the download, URL, and unzip file name.
+4.  Set variables for URL, file and download locations
+5.  Test for data foloder and zip file, if NOT found create
+6.  Download and unzip the filename
+7.  Load activity labels - Uses descriptive activity names to name the activities in the data set
+8.  Extract only the data on mean and standard deviation
+9.  Merge train and test data sets and add thier labels
+10. Transform activities & subjects into factors
+11. Write out the tidy data set
+12. Create Markup files using R (CodeBook and Readme)
+13. Publish everything into Github (https://github.com/omg-allen/Getting-and-Cleansing-Data---Project)
+
+
 Notes: 
 ======
 For more information about this dataset contact: activityrecognition@smartlab.ws
